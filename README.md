@@ -72,7 +72,7 @@ This project is split into focused microservices:
 
 | Component | Description | Repository |
 |-----------|-------------|------------|
-| **Frontend** | Next.js user interface | [tickethub-aws-frontend](https://github.com/romelt777/tickethub-aws-ui) |
+| **Frontend** | Next.js user interface | [tickethub-aws-ui](https://github.com/romelt777/tickethub-aws-ui) |
 | **Validator** | Input validation Lambda | [tickethub-aws-api](https://github.com/romelt777/tickethub-aws-api) |
 | **Processor** | Queue processing Lambda | [tickethub-aws-processor](https://github.com/romelt777/tickethub-aws-processor) |
 
