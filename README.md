@@ -2,7 +2,7 @@
 
 A production-grade serverless application built with Next.js and AWS, demonstrating microservices architecture, event-driven design, and modern DevOps practices.
 
-[![Live Demo](https://img.shields.io/badge/demo-live-success)](https://YOUR-VERCEL-URL.vercel.app)
+[![Live Demo](https://img.shields.io/badge/demo-live-success)](https://tickethub-aws-ui.vercel.app/)
 [![AWS](https://img.shields.io/badge/AWS-Lambda%20%7C%20SQS%20%7C%20DynamoDB-orange)](https://aws.amazon.com)
 [![Next.js](https://img.shields.io/badge/Next.js-14-black)](https://nextjs.org)
 
