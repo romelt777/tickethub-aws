@@ -23,7 +23,7 @@ TicketHub is a fully serverless ticketing platform that processes orders through
 
 ## 🏗️ Architecture
 
-*(Architecture diagram coming soon)*
+![Architecture Diagram](./docs/architecture.png)
 
 The system follows a serverless microservices pattern:
 
