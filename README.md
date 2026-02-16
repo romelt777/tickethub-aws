@@ -1,6 +1,6 @@
 # TicketHub - Cloud-Native Ticketing System
 
-A production-grade serverless application built with Next.js and AWS, demonstrating microservices architecture, event-driven design, and modern DevOps practices.
+A serverless application built with Next.js and AWS, demonstrating microservices architecture, event-driven design, and modern DevOps practices.
 
 [![Live Demo](https://img.shields.io/badge/demo-live-success)](https://tickethub-aws-ui.vercel.app/)
 [![AWS](https://img.shields.io/badge/AWS-Lambda%20%7C%20SQS%20%7C%20DynamoDB-orange)](https://aws.amazon.com)
@@ -8,7 +8,7 @@ A production-grade serverless application built with Next.js and AWS, demonstrat
 
 ---
 
-## 🎯 Project Overview
+## Project Overview
 
 TicketHub is a fully serverless ticketing platform that processes orders through a multi-stage pipeline with validation, queuing, and persistent storage. Built to demonstrate:
 
@@ -21,7 +21,7 @@ TicketHub is a fully serverless ticketing platform that processes orders through
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ![Architecture Diagram](./docs/architecture.png)
 
@@ -33,7 +33,7 @@ See [Component Repositories](#-component-repositories) for detailed breakdown.
 
 ---
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 ### Frontend
 - **Next.js 15** - React framework with server actions
@@ -55,7 +55,7 @@ See [Component Repositories](#-component-repositories) for detailed breakdown.
 
 ---
 
-## ✨ Features
+## Features
 
 ✅ **Real-time validation** - Instant feedback on form inputs  
 ✅ **Async processing** - Non-blocking ticket submission  
@@ -66,7 +66,7 @@ See [Component Repositories](#-component-repositories) for detailed breakdown.
 
 ---
 
-## 📦 Component Repositories
+## Component Repositories
 
 This project is split into focused microservices:
 
@@ -78,7 +78,7 @@ This project is split into focused microservices:
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - Node.js 22+ (AWS Lambda uses Node.js 24 runtime)
@@ -142,7 +142,7 @@ Push to `main` branch - GitHub Actions handles deployment automatically.
 
 ---
 
-## 📊 System Flow
+## System Flow
 
 1. **User submits form** on Next.js frontend
 2. **API Gateway** receives HTTP POST request
@@ -155,7 +155,7 @@ Push to `main` branch - GitHub Actions handles deployment automatically.
 
 ---
 
-## 🧪 Testing
+## Testing
 
 ### End-to-End Test
 ```bash
@@ -185,7 +185,7 @@ aws dynamodb scan --table-name Tickets
 
 ---
 
-## 📈 Future Enhancements
+## Future Enhancements
 
 - [ ] Cost monitoring dashboard (CloudWatch metrics)
 - [ ] Email confirmations (SES integration)
