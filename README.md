@@ -115,7 +115,7 @@ See individual repository READMEs for detailed setup instructions.
 
 ---
 
-## 🔧 AWS Infrastructure Setup
+## AWS Infrastructure Setup
 
 ### 1. Create SQS Queue
 ```bash
