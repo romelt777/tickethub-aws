@@ -44,7 +44,6 @@ Backend (AWS):
 - AWS Lambda (Node.js runtime)
 - Amazon SQS
 - Amazon DynamoDB
-- CloudWatch (logging)
 
 DevOps:
 - GitHub Actions (CI/CD)
