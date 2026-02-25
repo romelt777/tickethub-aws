@@ -25,7 +25,7 @@ This design separates validation from persistence and enables asynchronous proce
 
 **Frontend** → **API Gateway** → **Validator Lambda** → **SQS Queue** → **Processor Lambda** → **DynamoDB**
 
-See [Component Repositories](#-component-repositories) for detailed breakdown.
+See [Component Repositories](#component-repositories) for detailed breakdown.
 
 ---
 
