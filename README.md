@@ -62,6 +62,8 @@ sam deploy --guided
 
 X-Ray tracing is enabled across the full request path. You can see exactly how long each step takes: from the API Gateway through both Lambdas, the SQS handoff, and the DynamoDB write. Useful for spotting where things slow down or break.
 
+![XRay Diagram](./docs/xray-trace-diagram-screenshot.png)
+
 ---
 
 ## Repos
