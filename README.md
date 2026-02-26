@@ -25,7 +25,7 @@ If the processor fails, SQS retries the message up to 3 times. After that it get
 
 **Frontend → API Gateway → Validator Lambda → SQS Queue → Processor Lambda → DynamoDB**
 
-On failure after 3 retries → **Dead-Letter Queue**
+On SQS failure after 3 retries → **Dead-Letter Queue**
 
 ---
 
