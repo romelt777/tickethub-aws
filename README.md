@@ -72,7 +72,7 @@ Trace Map Diagram from AWS:
 | Component | Repo |
 |-----------|------|
 | Frontend | [tickethub-aws-ui](https://github.com/romelt777/tickethub-aws-ui) |
-| Backend (SAM) | [tickethub-backend](https://github.com/romelt777/tickethub-backend) |
+| Backend | [tickethub-backend](https://github.com/romelt777/tickethub-backend) |
 
 ---
 
