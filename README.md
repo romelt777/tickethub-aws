@@ -73,7 +73,7 @@ git clone https://github.com/romelt777/tickethub-backend.git
 cd tickethub-backend
 ```
 
-### 1. Build and deploy with SAM
+### 2. Build and deploy with SAM
 ```bash
 sam build
 sam deploy --guided
