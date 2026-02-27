@@ -1,6 +1,6 @@
 # TicketHub - Serverless Ticketing System
 
-TicketHub is a serverless ticket submission app I built to get hands-on with AWS. The frontend is Next.js, the backend runs entirely on AWS Lambda, and the whole infrastructure is defined as code using AWS SAM so it can be deployed from scratch with a single command.
+TicketHub is a serverless ticket submission app I built to get hands-on with AWS. The frontend is Next.js, the backend uses AWS services, with Lambda handling the core application logic. The infrastructure is defined using AWS SAM, so everything can be recreated and deployed from code..
 
 [![Live Demo](https://img.shields.io/badge/demo-live-success)](https://tickethub-aws-ui.vercel.app/)
 [![AWS](https://img.shields.io/badge/AWS-Lambda%20%7C%20SQS%20%7C%20DynamoDB%20%7C%20X--Ray-orange)](https://aws.amazon.com)
@@ -15,9 +15,15 @@ TicketHub is a serverless ticket submission app I built to get hands-on with AWS
 
 ## How it works
 
-When a user submits a ticket, the request hits API Gateway which triggers a validation Lambda. If the input is invalid it returns a 400 with error details. If it passes, the ticket gets sent to an SQS queue. A second Lambda picks it up from the queue and writes it to DynamoDB.
+When a user submits a ticket, the request goes through API Gateway which triggers a validation Lambda. 
 
-If the processor fails, SQS retries the message up to 3 times. After that it gets moved to a dead-letter queue instead of disappearing silently, so nothing gets lost and failed messages can be inspected and replayed.
+The Lambda checks the input and returns a `400` response if validation fails.  
+If the input is valid, the ticket is sent to an SQS queue.
+
+A separate Lambda processes messages from the queue and writes the ticket to DynamoDB.
+
+If processing fails, SQS automatically retries the message up to three times. After that, the message is moved to a Dead-Letter Queue so it can be inspected and replayed.
+
 
 ---
 
@@ -25,11 +31,11 @@ If the processor fails, SQS retries the message up to 3 times. After that it get
 
 **Frontend → API Gateway → Validator Lambda → SQS Queue → Processor Lambda → DynamoDB**
 
-On SQS failure after 3 retries → **Dead-Letter Queue**
+If a message fails processing after three retries, it is moved to a Dead-Letter Queue.
 
 ---
 
-## Stack
+## Tech Stack
 
 **Frontend**
 - Next.js 15, React 19, TailwindCSS
@@ -38,47 +44,64 @@ On SQS failure after 3 retries → **Dead-Letter Queue**
 **Backend**
 - API Gateway
 - AWS Lambda (Node.js)
-- Amazon SQS + Dead-Letter Queue
+- Amazon SQS with Dead-Letter Queue
 - Amazon DynamoDB
-- AWS X-Ray for distributed tracing
+- AWS X-Ray for tracing
 
 **DevOps**
 - AWS SAM (infrastructure as code)
-- GitHub Actions CI/CD
 - AWS SDK v3
 
 ---
 
 ## Infrastructure as Code
 
-Everything is defined in a SAM `template.yaml`: Lambda functions, API Gateway, SQS, DLQ, DynamoDB, and IAM permissions. 
+All backend resources are defined in a single SAM `template.yaml` file, including:
 
+- Lambda functions  
+- API Gateway  
+- SQS and Dead-Letter Queue  
+- DynamoDB  
+- IAM permissions  
+
+## Running Locally
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/romelt777/tickethub-backend.git
+cd tickethub-backend
+```
+
+### 1. Build and deploy with SAM
 ```bash
 sam build
 sam deploy --guided
 ```
 
+
 ## Tracing
 
-X-Ray tracing is enabled across the full request path. You can see exactly how long each step takes: from the API Gateway through both Lambdas, the SQS handoff, and the DynamoDB write. Useful for spotting where things slow down or break.
+AWS X-Ray tracing is enabled across the full request flow.
 
-Trace Map Diagram from AWS:
-![XRay Diagram](./docs/xray-trace-diagram-screenshot.png)
+This lets me see how a request moves through API Gateway, both Lambda functions, the SQS queue, and finally DynamoDB. It’s helpful for understanding latency between services and debugging failures.
+
+![XRay trace map](./docs/xray-trace-diagram-screenshot.png)
 
 ---
 
-## Repos
+## Repositories
 
-| Component | Repo |
-|-----------|------|
-| Frontend | [tickethub-aws-ui](https://github.com/romelt777/tickethub-aws-ui) |
-| Backend | [tickethub-backend](https://github.com/romelt777/tickethub-backend) |
+- **Frontend:** https://github.com/romelt777/tickethub-aws-ui  
+- **Backend:** https://github.com/romelt777/tickethub-backend  
 
 ---
 
 ## What's next
 
-- CloudWatch alarms for error rates and queue depth
-- Email confirmations with SES
-- Auth with Cognito
-- Admin dashboard for managing tickets
+Things I’d like to add or improve:
+
+- CloudWatch alarms for error rates and queue depth  
+- Email confirmations using SES  
+- Authentication with Cognito  
+- A simple admin dashboard for managing tickets  
