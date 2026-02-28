@@ -1,6 +1,6 @@
 # TicketHub - Serverless Ticketing System
 
-TicketHub is a serverless ticket submission app I built to get hands-on with AWS. The frontend is Next.js, the backend uses AWS services, with Lambda handling the core application logic. The infrastructure is defined using AWS SAM, so everything can be recreated and deployed from code..
+TicketHub is a ticket submission app I built to get hands-on with AWS. The frontend is Next.js, the backend uses AWS services, with Lambda handling the core application logic. The infrastructure is defined using AWS SAM, so everything can be recreated and deployed from code.
 
 [![Live Demo](https://img.shields.io/badge/demo-live-success)](https://tickethub-aws-ui.vercel.app/)
 [![AWS](https://img.shields.io/badge/AWS-Lambda%20%7C%20SQS%20%7C%20DynamoDB%20%7C%20X--Ray-orange)](https://aws.amazon.com)
@@ -89,7 +89,7 @@ Three CloudWatch alarms watch the backend and email me via SNS if something brea
 
 ---
 
-## Running Locally
+## Deploying the Backend
 
 ### 1. Clone the repository
 
@@ -117,7 +117,6 @@ sam deploy --guided
 
 Things I’d like to add or improve:
 
-- CloudWatch alarms for error rates and queue depth  
 - Email confirmations using SES  
 - Authentication with Cognito  
 - A simple admin dashboard for managing tickets  
