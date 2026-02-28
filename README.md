@@ -77,13 +77,13 @@ This lets me see how a request moves through API Gateway, both Lambda functions,
 
 ---
 
-## Monitoring & Alerts (CloudWatch Alarms + SNS Email)
+## Monitoring & Alerts
 
-To make failures visible quickly, the backend includes **CloudWatch alarms** that send **email notifications via SNS**:
+To make failures visible quickly, the backend includes CloudWatch alarms that send email notifications via SNS:
 
-- **Validator Lambda error alarm** — alerts when the Validator Lambda reports invocation errors (exceptions/timeouts).
-- **Processor Lambda error alarm** — alerts when the Processor Lambda reports invocation errors while processing SQS messages.
-- **DLQ alarm** — alerts when the Dead-Letter Queue contains messages (a strong signal that processing is failing consistently).
+- Validator Lambda error alarm — alerts when the Validator Lambda reports invocation errors (exceptions/timeouts).
+- Processor Lambda error alarm — alerts when the Processor Lambda reports invocation errors while processing SQS messages.
+- DLQ alarm — alerts when the Dead-Letter Queue contains messages (a strong signal that processing is failing consistently).
 
 ![CloudWatch_Alarms](./docs/alarms.png)
 
