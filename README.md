@@ -86,6 +86,8 @@ To make failures visible quickly, the backend includes **CloudWatch alarms** tha
 - **Processor Lambda error alarm** — alerts when the Processor Lambda reports invocation errors while processing SQS messages.
 - **DLQ alarm** — alerts when the Dead-Letter Queue contains messages (a strong signal that processing is failing consistently).
 
+![CloudWatch Alarms](./docs/alarms.png)
+
 ---
 ## Running Locally
 
