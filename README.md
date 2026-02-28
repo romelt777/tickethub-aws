@@ -66,6 +66,8 @@ All backend resources are defined in a single SAM `template.yaml` file, includin
 - IAM permissions
 - CloudWatch alarms
 
+---
+
 ## Running Locally
 
 ### 1. Clone the repository
@@ -80,7 +82,7 @@ cd tickethub-backend
 sam build
 sam deploy --guided
 ```
-
+---
 
 ## Tracing
 
