@@ -24,7 +24,6 @@ A separate Lambda processes messages from the queue and writes the ticket to Dyn
 
 If processing fails, SQS automatically retries the message up to three times. After that, the message is moved to a Dead-Letter Queue so it can be inspected and replayed.
 
-
 ---
 
 ## Architecture
@@ -89,6 +88,7 @@ To make failures visible quickly, the backend includes **CloudWatch alarms** tha
 ![CloudWatch_Alarms](./docs/alarms.png)
 
 ---
+
 ## Running Locally
 
 ### 1. Clone the repository
@@ -103,6 +103,7 @@ cd tickethub-backend
 sam build
 sam deploy --guided
 ```
+
 ---
 
 ## Repositories
