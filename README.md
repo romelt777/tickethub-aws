@@ -68,22 +68,6 @@ All backend resources are defined in a single SAM `template.yaml` file, includin
 
 ---
 
-## Running Locally
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/romelt777/tickethub-backend.git
-cd tickethub-backend
-```
-
-### 2. Build and deploy with SAM
-```bash
-sam build
-sam deploy --guided
-```
----
-
 ## Tracing
 
 AWS X-Ray tracing is enabled across the full request flow.
@@ -102,6 +86,21 @@ To make failures visible quickly, the backend includes **CloudWatch alarms** tha
 - **Processor Lambda error alarm** — alerts when the Processor Lambda reports invocation errors while processing SQS messages.
 - **DLQ alarm** — alerts when the Dead-Letter Queue contains messages (a strong signal that processing is failing consistently).
 
+---
+## Running Locally
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/romelt777/tickethub-backend.git
+cd tickethub-backend
+```
+
+### 2. Build and deploy with SAM
+```bash
+sam build
+sam deploy --guided
+```
 ---
 
 ## Repositories
