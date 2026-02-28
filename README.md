@@ -47,6 +47,7 @@ If a message fails processing after three retries, it is moved to a Dead-Letter 
 - Amazon SQS with Dead-Letter Queue
 - Amazon DynamoDB
 - AWS X-Ray for tracing
+- Amazon CloudWatch (metrics + alarms)
 
 **DevOps**
 - AWS SAM (infrastructure as code)
@@ -62,7 +63,8 @@ All backend resources are defined in a single SAM `template.yaml` file, includin
 - API Gateway  
 - SQS and Dead-Letter Queue  
 - DynamoDB  
-- IAM permissions  
+- IAM permissions
+- CloudWatch alarms
 
 ## Running Locally
 
@@ -87,6 +89,16 @@ AWS X-Ray tracing is enabled across the full request flow.
 This lets me see how a request moves through API Gateway, both Lambda functions, the SQS queue, and finally DynamoDB. It’s helpful for understanding latency between services and debugging failures.
 
 ![XRay trace map](./docs/xray-trace-diagram-screenshot.png)
+
+---
+
+## Monitoring & Alerts (CloudWatch Alarms + SNS Email)
+
+To make failures visible quickly, the backend includes **CloudWatch alarms** that send **email notifications via SNS**:
+
+- **Validator Lambda error alarm** — alerts when the Validator Lambda reports invocation errors (exceptions/timeouts).
+- **Processor Lambda error alarm** — alerts when the Processor Lambda reports invocation errors while processing SQS messages.
+- **DLQ alarm** — alerts when the Dead-Letter Queue contains messages (a strong signal that processing is failing consistently).
 
 ---
 
