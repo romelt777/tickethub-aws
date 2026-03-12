@@ -2,11 +2,6 @@
 
 TicketHub is a ticket submission app. The frontend is Next.js, the backend uses AWS services, with Lambda handling the core application logic. The infrastructure is defined using AWS SAM, so everything can be recreated and deployed from code.
 
-[![Live Demo](https://img.shields.io/badge/demo-live-success)](https://tickethub-aws-ui.vercel.app/)
-[![AWS](https://img.shields.io/badge/AWS-Lambda%20%7C%20SQS%20%7C%20DynamoDB%20%7C%20X--Ray-orange)](https://aws.amazon.com)
-[![Next.js](https://img.shields.io/badge/Next.js-15-black)](https://nextjs.org)
-[![SAM](https://img.shields.io/badge/IaC-AWS%20SAM-yellow)](https://aws.amazon.com/serverless/sam/)
-
 ---
 
 **Live Demo:** [https://tickethub-aws-ui.vercel.app/](https://tickethub-aws-ui.vercel.app/)
