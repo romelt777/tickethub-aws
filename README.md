@@ -102,7 +102,7 @@ git clone https://github.com/romelt777/tickethub-backend.git
 cd tickethub-backend
 ```
 
-### 2. Configure parameter (AWS SSM) for alarm
+### 2. Configure parameter (AWS SSM) for alarms
 
 ```bash
 aws ssm put-parameter --name "/tickethub/alarm-email" --value "youremail@hotmail.com" --type SecureString
