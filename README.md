@@ -8,6 +8,13 @@ TicketHub is a ticket submission app. The frontend is Next.js, the backend uses 
 
 ---
 
+## Repositories
+
+- **Frontend:** https://github.com/romelt777/tickethub-aws-ui  
+- **Backend:** https://github.com/romelt777/tickethub-backend  
+
+---
+
 ## How it works
 
 When a user submits a ticket, the request goes through API Gateway which triggers a validation Lambda. 
@@ -109,13 +116,6 @@ aws ssm put-parameter --name "/tickethub/alarm-email" --value "youremail@hotmail
 sam build
 sam deploy --guided
 ```
-
----
-
-## Repositories
-
-- **Frontend:** https://github.com/romelt777/tickethub-aws-ui  
-- **Backend:** https://github.com/romelt777/tickethub-backend  
 
 ---
 
