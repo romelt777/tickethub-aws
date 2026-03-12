@@ -91,6 +91,11 @@ Three CloudWatch alarms watch the backend and email me via SNS if something brea
 
 ## Deploying the Backend
 
+### Prerequisites
+- AWS credentials configured (e.g., `aws configure` or AWS SSO)
+- AWS SAM CLI installed
+- Use the same AWS region for SSM and the SAM deploy (e.g., `us-east-1`)
+
 ### 1. Clone the repository
 
 ```bash
@@ -98,7 +103,13 @@ git clone https://github.com/romelt777/tickethub-backend.git
 cd tickethub-backend
 ```
 
-### 2. Build and deploy with SAM
+### 2. Configure parameter (AWS SSM) for alarm
+
+```bash
+aws ssm put-parameter --name "/tickethub/alarm-email" --value "youremail@hotmail.com" --type SecureString
+```bash
+
+### 3. Build and deploy with SAM
 ```bash
 sam build
 sam deploy --guided
