@@ -39,7 +39,7 @@ If a message fails processing after three retries, it is moved to a Dead-Letter 
 ## Tech Stack
 
 **Frontend**
-- Next.js 15, React 19, TailwindCSS
+- Next.js 15, Typescript, React 19, TailwindCSS
 - Deployed on Vercel
 
 **Backend**
