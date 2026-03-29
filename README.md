@@ -4,7 +4,7 @@ TicketHub is a ticket submission app. The frontend is Next.js, the backend uses 
 
 ---
 
-**Live Demo:** [https://tickethub-aws-ui.vercel.app/](https://tickethub-aws-ui.vercel.app/)
+**Live Demo:** https://tickethub-aws-frontend.vercel.app/
 
 ---
 
