@@ -10,7 +10,7 @@ TicketHub is a ticket submission app. The frontend is Next.js, the backend uses 
 
 ## Repositories
 
-- **Frontend:** https://github.com/romelt777/tickethub-aws-ui  
+- **Frontend:** https://github.com/romelt777/tickethub-aws-frontend
 - **Backend:** https://github.com/romelt777/tickethub-backend  
 
 ---
