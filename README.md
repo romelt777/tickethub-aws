@@ -39,12 +39,12 @@ If a message fails processing after three retries, it is moved to a Dead-Letter 
 ## Tech Stack
 
 **Frontend**
-- Next.js 15, Typescript, React 19, TailwindCSS
+- Next.js 15, TypeScript, React 19, TailwindCSS
 - Deployed on Vercel
 
 **Backend**
 - API Gateway
-- AWS Lambda (Node.js)
+- AWS Lambda (Node.js / TypeScript)
 - Amazon SQS with Dead-Letter Queue
 - Amazon DynamoDB
 - AWS X-Ray for tracing
